@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:src="@drawable/ic_launcher_background" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/item_img_icon"
@@ -24,10 +24,9 @@
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toBottomOf=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/item_img_thumbnail"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/ic_launcher_background" />
 
 
     <ImageView
@@ -43,10 +42,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
         android:fontFamily="@font/inter_bold"
         android:maxLines="2"
         android:text="@string/teste"
         android:textColor="@color/white"
+        android:ellipsize="end"
         app:layout_constraintEnd_toStartOf="@id/item_img_menu"
         app:layout_constraintStart_toEndOf="@+id/item_img_icon"
         app:layout_constraintTop_toTopOf="@id/item_img_icon" />
@@ -58,6 +59,7 @@
         android:maxLines="2"
         android:text="@string/desc"
         android:textColor="@color/gray"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@id/item_txt_title"
         app:layout_constraintStart_toStartOf="@id/item_txt_title"
         app:layout_constraintTop_toBottomOf="@id/item_txt_title" />
