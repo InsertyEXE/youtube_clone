@@ -2,6 +2,8 @@ package com.example.youtube_clone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.youtube_clone.databinding.ActivityMainBinding
 import com.example.youtube_clone.model.ListVideo
@@ -20,9 +22,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbarMain)
+        supportActionBar?.title = ""
 
         val list = mutableListOf<Video>()
         videoAdapter = VideoAdapter(list){ video ->
@@ -43,14 +47,17 @@ class MainActivity : AppCompatActivity() {
                     list.clear()
                     list.addAll(it.data)
                     videoAdapter.notifyDataSetChanged()
-                    binding.motionView.removeView(binding.progressRecycler)
+                    binding.progressRecycler.visibility = View.GONE
 
                 }
             }
-
-
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun getVideos(): ListVideo? {
