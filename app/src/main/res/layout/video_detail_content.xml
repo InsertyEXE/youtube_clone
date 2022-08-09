@@ -137,8 +137,8 @@
         android:id="@+id/rv_similar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12sp"
-        android:layout_marginStart="12sp"
-        tools:listitem="@layout/video_detail"
-        tools:itemCount="3"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        tools:listitem="@layout/video_detail_list_item_video"
+        tools:itemCount="10"/>
 </LinearLayout>
